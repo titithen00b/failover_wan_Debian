@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>État de la Connexion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 20px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #0077cc;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .info {
+      margin-bottom: 15px;
+    }
+    .status {
+      font-weight: bold;
+    }
+    .normal {
+      color: green;
+    }
+    .failover {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>État de la Connexion : <span class="status {{ status }}">{{ status }}</span></h1>
+    <div class="info">
+      <p><strong>Dernier basculement :</strong> {{ last_event }}</p>
+      <p><strong>Données utilisées en failover :</strong> {{ data_used }}</p>
+      <p><strong>Utilisation actuelle (RX+TX) :</strong> {{ current_usage }}</p>
+    </div>
+    <h2>Historique :</h2>
+    <pre>{{ log }}</pre>
+  </div>
+</body>
+</html>
+
